@@ -1,0 +1,51 @@
+name: find_doctor_app
+description: "Find Doctor - healthcare app to find doctors and book appointments."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.12.0 <4.0.0'
+  flutter: '>=3.44.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.9
+  crypto: ^3.0.6
+  path_provider: ^2.1.5
+  bloc: ^9.2.1
+  flutter_bloc: ^9.1.1
+  equatable: ^2.1.0
+  provider: ^6.1.5+1
+  firebase_core: ^4.15.0
+  firebase_auth: ^6.7.0
+  cloud_firestore: ^6.10.0
+  flutter_secure_storage: ^11.2.0
+  shared_preferences: ^2.5.5
+  flutter_svg: ^2.3.0
+  google_fonts: ^6.3.3
+  http: ^1.6.0
+  image: ^4.5.4
+  image_picker: ^1.1.2
+  intl: ^0.20.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  bloc_test: ^10.0.0
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/images/explore/
+
+# Local copy of the Windows secure-storage plugin with <atlstr.h> replaced by a
+# small header (windows/atl_compat.h), so the app builds without Visual
+# Studio's optional "C++ ATL" component.
+dependency_overrides:
+  flutter_secure_storage_windows:
+    path: third_party/flutter_secure_storage_windows

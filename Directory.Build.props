@@ -1,0 +1,7 @@
+<Project>
+  <!-- Prevents MSBuild TRK0002 "Failed to execute command ... CL.exe" errors
+       caused by antivirus software blocking the file tracker. -->
+  <PropertyGroup>
+    <TrackFileAccess>false</TrackFileAccess>
+  </PropertyGroup>
+</Project>
