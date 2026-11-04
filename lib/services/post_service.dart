@@ -1,11 +1,10 @@
 import 'dart:math';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 
 import 'account_service.dart';
 import 'cloud/fs_mirror.dart';
+import 'cloud/supabase_api.dart';
 import 'cloud/media_service.dart';
 
 /// Who posted or commented.
@@ -188,7 +187,7 @@ class FeedPost {
   final Set<String> viewedBy;
   final List<ReelSlide> slides;
 
-  /// Firebase user id of whoever posted it ('' for built-in demo posts).
+  /// Sign-in user id of whoever posted it ('' for built-in demo posts).
   final String authorUid;
 
   bool get isReel => kind == 'reel';
@@ -272,6 +271,7 @@ class PostService extends ChangeNotifier {
   final List<_FollowDoc> _followDocs = [];
   late final FsMirror<FeedPost> _postMirror = FsMirror<FeedPost>(
     collection: 'posts',
+    pollEvery: const Duration(seconds: 15),
     list: _postList,
     idOf: (post) => post.id,
     toJson: (post) => post.toJson(),
@@ -317,7 +317,7 @@ class PostService extends ChangeNotifier {
   /// first time anyone opens the feed.
   void attach(AppAccount me) {
     _attached = true;
-    final db = FirebaseFirestore.instance;
+    const db = CloudDb.instance;
     _postMirror.listen([db.collection('posts')]);
     _followMirror.listen([
       db.collection('follows').where(FieldPath.documentId, isEqualTo: me.email),
@@ -336,6 +336,9 @@ class PostService extends ChangeNotifier {
   }
 
   Future<void> _addDemoContent() async {
+    // Only when the feed really loaded: a failed load (offline) looks empty,
+    // and pushing the samples then would try to overwrite the stored ones.
+    if (!_attached || !_postMirror.loadedOk) return;
     final ids = _postList.map((post) => post.id).toSet();
     final missing = [..._seedPosts(), ..._seedReels()]
         .where((post) => !ids.contains(post.id))
@@ -360,7 +363,7 @@ class PostService extends ChangeNotifier {
   /// people reacting at once don't undo each other.
   static void _writePost(
     WriteBatch batch,
-    DocumentReference<JsonMap> ref,
+    DocumentReference ref,
     JsonMap now,
     JsonMap? before,
   ) {
@@ -505,7 +508,7 @@ class PostService extends ChangeNotifier {
       location: account.hospital,
       createdAt: DateTime.now(),
       slides: reelSlidesFor(title: title, tips: tips, handle: author.handle),
-      authorUid: FirebaseAuth.instance.currentUser?.uid ?? '',
+      authorUid: CloudAuth.instance.currentUser?.uid ?? '',
     );
     _posts!.insert(0, reel);
     await _changed();
@@ -587,7 +590,7 @@ class PostService extends ChangeNotifier {
       author: authorFor(account),
       image: image,
       isAsset: false,
-      authorUid: FirebaseAuth.instance.currentUser?.uid ?? '',
+      authorUid: CloudAuth.instance.currentUser?.uid ?? '',
       caption: caption.trim(),
       topic: topic,
       location: location.trim(),
@@ -985,7 +988,7 @@ class PostService extends ChangeNotifier {
   }
 }
 
-/// Who one person follows (Firestore `follows/{email}`).
+/// Who one person follows (table `follows`, id = email).
 class _FollowDoc {
   _FollowDoc(this.email, this.handles);
   final String email;

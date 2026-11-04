@@ -141,7 +141,7 @@ class PostsFeed extends StatelessWidget {
                     onOpen: openStory,
                     onMine: () {
                       if (hasMyReels) {
-                        openStory(me!);
+                        openStory(me);
                       } else {
                         showCreatePostDialog(context, reel: true);
                       }

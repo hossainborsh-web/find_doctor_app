@@ -16,32 +16,8 @@ add_executable(${BINARY_NAME} WIN32
   "runner.exe.manifest"
 )
 
-# Build and ship the local authentication bridge alongside the Flutter app.
-# It uses the same FindDoctorApp SQLite account store as the existing desktop app.
-set(AUTH_BRIDGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../auth_bridge")
-set(AUTH_BRIDGE_OUTPUT_DIR "${CMAKE_CURRENT_BINARY_DIR}/auth_bridge")
-set(AUTH_BRIDGE_EXE "${AUTH_BRIDGE_OUTPUT_DIR}/FindDoctorAuthBridge.exe")
-add_custom_command(
-  OUTPUT "${AUTH_BRIDGE_EXE}"
-  COMMAND dotnet publish "${AUTH_BRIDGE_SOURCE_DIR}/FindDoctorAuthBridge.csproj"
-    --configuration Release
-    --runtime win-x64
-    --self-contained true
-    --output "${AUTH_BRIDGE_OUTPUT_DIR}"
-    -p:PublishSingleFile=false
-    -p:NuGetAudit=false
-  DEPENDS
-    "${AUTH_BRIDGE_SOURCE_DIR}/FindDoctorAuthBridge.csproj"
-    "${AUTH_BRIDGE_SOURCE_DIR}/Program.cs"
-  COMMENT "Publishing secure Find Doctor account sign-in"
-  VERBATIM
-)
-add_custom_target(find_doctor_auth_bridge DEPENDS "${AUTH_BRIDGE_EXE}")
-add_dependencies(${BINARY_NAME} find_doctor_auth_bridge)
-# The sign-in service is copied beside the app by the INSTALL step in the
-# top-level CMakeLists.txt, which skips files that have not changed. (A second
-# full copy here rewrote ~200 files on every build and kept colliding with
-# antivirus scans: "Permission denied".)
+# Sign-in now goes through Supabase over HTTPS (lib/services/cloud),
+# so no extra sign-in program is built beside the app.
 
 # Apply the standard set of build settings. This can be removed for applications
 # that need different build settings.

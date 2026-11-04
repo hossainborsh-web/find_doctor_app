@@ -47,6 +47,10 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Find Doctor lets you choose a photo for your profile, posts and certificates.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Find Doctor lets you take a photo for your profile, posts and certificates.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

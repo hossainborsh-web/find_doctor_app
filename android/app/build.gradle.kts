@@ -15,11 +15,11 @@ android {
     }
 
     defaultConfig {
-        // The id Firebase knows this app by (Project settings > Your apps).
+        // The app's unique id on Android.
         applicationId = "com.finddoctor.app"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        // Firebase needs Android 6.0 (API 23) or newer.
+        // Android 6.0 (API 23) or newer.
         minSdk = maxOf(flutter.minSdkVersion, 23)
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode

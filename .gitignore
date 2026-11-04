@@ -43,8 +43,6 @@ linux/flutter/ephemeral/
 # Windows
 
 windows/flutter/ephemeral/
-windows/auth_bridge/bin/
-windows/auth_bridge/obj/
 
 # Web
 
@@ -80,7 +78,7 @@ Thumbs.db
 .env.*
 !.env.example
 
-# Firebase / service account credentials
+# Service account credentials (never commit keys)
 
 google-services.json
 GoogleService-Info.plist

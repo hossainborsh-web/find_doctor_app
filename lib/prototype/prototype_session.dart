@@ -3,7 +3,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../core/domain/entities/user_role.dart';
 import '../services/account_service.dart';
-import '../services/firebase_auth_service.dart';
 
 class PrototypeSession extends ChangeNotifier {
   PrototypeSession({AppAccount? initialAccount}) {
@@ -120,18 +119,6 @@ class PrototypeSession extends ChangeNotifier {
     notifyListeners();
   }
 
-  void signInWithFirebase(FirebaseAuthUser account) {
-    signIn(
-      fullName: account.displayName,
-      email: account.email,
-      roleName: account.role,
-      isVerified: account.role == 'Doctor' || account.role == 'Manager'
-          ? account.approved
-          : account.emailVerified,
-      accountManagerLevel: account.managerLevel,
-    );
-  }
-
   /// Signs in with an account from [AccountService].
   void signInWithAccount(AppAccount account) {
     _applyAccount(account);
@@ -159,28 +146,6 @@ class PrototypeSession extends ChangeNotifier {
       doctorApproved = true;
       notifyListeners();
     }
-  }
-
-  void _applyAuthenticatedAccount(FirebaseAuthUser account) {
-    final normalizedRole = account.role.trim().toLowerCase();
-    role = switch (normalizedRole) {
-      'doctor' => UserRole.doctor,
-      'manager' || 'general manager' || 'doctor manager' => UserRole.manager,
-      _ => UserRole.patient,
-    };
-    managerLevel = switch (account.managerLevel?.trim().toLowerCase()) {
-      'doctor manager' || 'doctormanager' => ManagerLevel.doctorManager,
-      'general manager' || 'generalmanager' => ManagerLevel.generalManager,
-      _ => null,
-    };
-    displayName = account.displayName.trim().isEmpty
-        ? account.email
-        : account.displayName.trim();
-    email = account.email;
-    verification = account.emailVerified
-        ? VerificationStatus.approved
-        : VerificationStatus.pending;
-    doctorApproved = account.approved;
   }
 
   void _applyAccount(AppAccount account) {

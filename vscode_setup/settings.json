@@ -1,0 +1,34 @@
+{
+  "dart.flutterSdkPath": "C:\\Users\\Omen\\Downloads\\flutter_windows_3.44.4-stable\\flutter",
+  "dart.analysisExcludedFolders": [
+    "backup_before_accounts",
+    "backup_before_chat",
+    "backup_before_dark",
+    "backup_before_explore",
+    "backup_before_fixes",
+    "backup_before_indigo_redesign",
+    "backup_before_reels",
+    "backup_before_supabase",
+    "backup_before_firebase_removal",
+    "build"
+  ],
+  "dart.lineLength": 80,
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.rulers": [80],
+    "editor.tabSize": 2
+  },
+  "files.exclude": {
+    "**/.dart_tool": true,
+    "build": true
+  },
+  "search.exclude": {
+    "backup_*/**": true,
+    "build/**": true,
+    "*_log.txt": true,
+    "procs_now.txt": true,
+    "build_procs.txt": true,
+    "pubspec.lock": true
+  },
+  "cmake.configureOnOpen": false
+}

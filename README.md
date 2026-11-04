@@ -93,17 +93,16 @@ Check your installation with:
 flutter doctor
 ```
 
-### Firebase Authentication
+### Supabase backend
 
-Email and password sign-in, patient account creation, password reset, email verification, and encrypted refresh-token storage use Firebase Authentication. Before signing in, create or select a Firebase project, enable **Email/Password** under Authentication > Sign-in method, and copy its Web API key from Project settings.
+Sign-in, accounts, appointments, chat, hiring, inventory, posts and photos are stored in Supabase.
+The project URL and public key are in `lib/supabase_config.dart`; no extra key or `--dart-define` is needed.
 
-Run the Windows app with the project key:
+1. In the Supabase dashboard, open **SQL Editor** and run `supabase/schema.sql` (safe to re-run).
+2. Under **Authentication > Sign In / Providers > Email**, keep Email enabled and turn **Confirm email** off.
+3. Sign up in the app, then make the first General Manager by hand (see the end of `schema.sql`).
 
-```powershell
-flutter run -d windows --dart-define=FIREBASE_API_KEY=YOUR_WEB_API_KEY
-```
-
-Pass the same value to `flutter build windows --release` when creating a release bundle. Doctor and manager access must be assigned by a trusted administrator through Firebase custom claims; users cannot grant themselves those roles in the client.
+Roles are protected by the database rules in `schema.sql`; users cannot give themselves Doctor or Manager access.
 
 ### 2. Get Dependencies
 
@@ -139,7 +138,7 @@ flutter build windows --release
 
 The native bundle is written to `build\windows\x64\runner\Release`. Run `packaging\windows\Build-WindowsPackage.ps1` to assemble the complete bundle and create `build\FindDoctor-Windows.zip`.
 
-Authentication can use Firebase Authentication after the project API key is configured. Profiles, appointments, application reviews, inventory, and messages still use sample data and local preview state; a production data backend and payment provider are required for live records and transactions.
+All records are stored in Supabase (see *Supabase backend* above). A payment provider is still required for real transactions.
 
 ## Development
 

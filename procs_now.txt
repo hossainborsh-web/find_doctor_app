@@ -1,0 +1,384 @@
+﻿
+
+ProcessId       : 6040
+ParentProcessId : 1652
+Name            : QHActiveDefense.exe
+CreationDate    : 11/3/2026 9:42:18 AM
+CommandLine     : 
+
+ProcessId       : 9712
+ParentProcessId : 6040
+Name            : QHWatchdog.exe
+CreationDate    : 11/3/2026 9:42:22 AM
+CommandLine     : 
+
+ProcessId       : 19572
+ParentProcessId : 1652
+Name            : codex-windows-sandbox-service.exe
+CreationDate    : 11/3/2026 9:42:54 AM
+CommandLine     : 
+
+ProcessId       : 23448
+ParentProcessId : 15108
+Name            : cncmd.exe
+CreationDate    : 11/3/2026 9:43:15 AM
+CommandLine     : "C:\Program Files\WindowsApps\advancedmicrodevicesinc-2.amdradeonsoftware_10.22.20073.0_x64__0a9344xs7nr4m\radeonsoftware\cncmd.exe" watch 15108
+
+ProcessId       : 15572
+ParentProcessId : 6040
+Name            : QHSafeTray.exe
+CreationDate    : 11/3/2026 9:43:43 AM
+CommandLine     : 
+
+ProcessId       : 16552
+ParentProcessId : 20136
+Name            : codex.exe
+CreationDate    : 11/3/2026 9:43:49 AM
+CommandLine     : C:\Users\Omen\AppData\Local\OpenAI\Codex\bin\b6c7fc9497179c98\codex.exe -c features.code_mode_host=true app-server --analytics-default-enabled -c features.prefer_mxc=true -c plugins.codex-app-tools@openai-bundled.mcp_servers.codex_app.enabled=true
+
+ProcessId       : 27416
+ParentProcessId : 20136
+Name            : codex-computer-use-swift.exe
+CreationDate    : 11/3/2026 9:43:56 AM
+CommandLine     : C:\Users\Omen\AppData\Local\OpenAI\Codex\runtimes\cua_node\989c7523a11c09b9\bin\node_modules\@oai\sky\bin\windows\swift\x64\codex-computer-use-swift.exe --parent-pid 20136
+
+ProcessId       : 28444
+ParentProcessId : 20136
+Name            : node.exe
+CreationDate    : 11/3/2026 9:43:58 AM
+CommandLine     : C:\Users\Omen\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe C:\Users\Omen\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\node_modules\@oai\artifact-tool\dist\artifact-session\host-daemon.mjs
+
+ProcessId       : 7836
+ParentProcessId : 4824
+Name            : claude.exe
+CreationDate    : 11/3/2026 7:02:46 PM
+CommandLine     : "C:\Program Files\WindowsApps\Claude_4.4212.0.0_x64__pzs8sxrjxfjjc\app\Claude.exe" 
+
+ProcessId       : 26588
+ParentProcessId : 7836
+Name            : claude.exe
+CreationDate    : 11/3/2026 7:02:47 PM
+CommandLine     : "C:\Program Files\WindowsApps\Claude_4.4212.0.0_x64__pzs8sxrjxfjjc\app\Claude.exe" --type=crashpad-handler --user-data-dir=C:\Users\Omen\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc /prefetch:4 --no-rate-limit --monitor-self-annotation=ptype=crashpad-handler --database=C:\Users\Omen\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc\Crashpad --url=https://f.a.k/e --annotation=_productName=Claude --annotation=_version=4.4212.0 --annotation=plat=Win64 --annotation=prod=Electron 
+                  --annotation=ver=44.9.3 --initial-client-data=0x54c,0x550,0x554,0x548,0x558,0x7ff6ea215a58,0x7ff6ea215a68,0x7ff6ea215a78
+
+ProcessId       : 5060
+ParentProcessId : 7836
+Name            : claude.exe
+CreationDate    : 11/3/2026 7:02:47 PM
+CommandLine     : "C:\Program Files\WindowsApps\Claude_4.4212.0.0_x64__pzs8sxrjxfjjc\app\Claude.exe" --type=gpu-process --user-data-dir="C:\Users\Omen\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc" --gpu-preferences=WAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAQAAAAAAAAAADAAAAAAAAADgAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAoAAAAAAAAAAgAAAAAAAAAEAAAAAIAAAABAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --field-trial-handle=2236,i,6008163782882301185,1339345067132457106,262144 
+                  --enable-features=AllowWindowCaptureExclusionInRemoteSessions,DocumentPolicyIncludeJSCallStacksInCrashReports,HttpCacheZstdCompression,HttpCacheZstdDecompression,IsolatesPriorityUseProcessPriority,PdfUseShowSaveFilePicker --disable-features=ConnectionAllowlists,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version 
+                  --pseudonymization-salt-handle=2260,i,18113046666939560513,1147985613356266861,4 --trace-process-track-uuid=3190708988185955192 --mojo-platform-channel-handle=2228 /prefetch:2
+
+ProcessId       : 22524
+ParentProcessId : 7836
+Name            : claude.exe
+CreationDate    : 11/3/2026 7:02:47 PM
+CommandLine     : "C:\Program Files\WindowsApps\Claude_4.4212.0.0_x64__pzs8sxrjxfjjc\app\Claude.exe" --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --user-data-dir="C:\Users\Omen\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc" --standard-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app --secure-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app,sentry-ipc 
+                  --bypasscsp-schemes=claude-media,claude-simulator,sentry-ipc --cors-schemes=claude-simulator,sentry-ipc --fetch-schemes=cowork-artifact,cowork-file,claude-simulator,app,sentry-ipc --service-worker-schemes=app --streaming-schemes=cowork-file,claude-media,claude-simulator --field-trial-handle=2236,i,6008163782882301185,1339345067132457106,262144 
+                  --enable-features=AllowWindowCaptureExclusionInRemoteSessions,DocumentPolicyIncludeJSCallStacksInCrashReports,HttpCacheZstdCompression,HttpCacheZstdDecompression,IsolatesPriorityUseProcessPriority,PdfUseShowSaveFilePicker --disable-features=ConnectionAllowlists,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version 
+                  --pseudonymization-salt-handle=2260,i,18113046666939560513,1147985613356266861,4 --trace-process-track-uuid=3190708989122997041 --mojo-platform-channel-handle=2596 /prefetch:11
+
+ProcessId       : 3780
+ParentProcessId : 7836
+Name            : claude.exe
+CreationDate    : 11/3/2026 7:02:48 PM
+CommandLine     : "C:\Program Files\WindowsApps\Claude_4.4212.0.0_x64__pzs8sxrjxfjjc\app\Claude.exe" --type=renderer --user-data-dir="C:\Users\Omen\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc" --standard-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app --secure-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app,sentry-ipc --bypasscsp-schemes=claude-media,claude-simulator,sentry-ipc --cors-schemes=claude-simulator,sentry-ipc 
+                  --fetch-schemes=cowork-artifact,cowork-file,claude-simulator,app,sentry-ipc --service-worker-schemes=app --streaming-schemes=cowork-file,claude-media,claude-simulator --app-user-model-id=Claude_pzs8sxrjxfjjc!Claude --app-path="C:\Program Files\WindowsApps\Claude_4.4212.0.0_x64__pzs8sxrjxfjjc\app\resources\app.asar" --enable-sandbox --blink-settings=dnsPrefetchingEnabled=false --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.5 --num-raster-threads=4 
+                  --enable-main-frame-before-activation --renderer-client-id=5 --launch-time-ticks=33654365296 --field-trial-handle=2236,i,6008163782882301185,1339345067132457106,262144 --enable-features=AllowWindowCaptureExclusionInRemoteSessions,DocumentPolicyIncludeJSCallStacksInCrashReports,HttpCacheZstdCompression,HttpCacheZstdDecompression,IsolatesPriorityUseProcessPriority,PdfUseShowSaveFilePicker 
+                  --disable-features=ConnectionAllowlists,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=2260,i,18113046666939560513,1147985613356266861,4 --trace-process-track-uuid=3190708990997080739 --mojo-platform-channel-handle=3144 --desktop-managed-config="{\"forceLoginOrgUUIDs\":null,\"loginSsoOrgDomain\":null,\"di
+                  sableEssentialTelemetry\":false,\"disableNonessentialTelemetry\":false,\"disableMobileSimulatorTools\":false,\"banner\":null,\"deploymentDisplayName\":null,\"deploymentDisplaySubtitle\":null,\"dictationAvailable\":false,\"userPluginMarketplacesEnabled\":true,\"userPluginUploadsEnabled\":true,\"configDeprecations\":[],\"configDeprecationNoticesSuppressed\":false,\"configOrgDelivered\":false,\"userContentFrameAllowed\":true,\"deploymentMode\":\"1p\",\"appVersion\":\"4.4212.0\",\"
+                  cookielessOrigin\":false,\"deviceClass\":\"16\",\"preferredSystemLanguages\":[\"en-US\",\"en-MY\",\"ar-EG\"],\"homePath\":\"C:\\Users\\Omen\",\"extensionsEnabled\":true,\"localExtensionInstallAllowed\":true,\"unpackedExtensionInstallAllowed\":true}" --desktop-boot-placeholder="{\"enabled\":true,\"colors\":{\"dark\":true,\"page\":{\"red\":25,\"green\":25,\"blue\":25,\"alpha\":1},\"sidebar\":{\"red\":31,\"green\":31,\"blue\":31,\"alpha\":1},\"seam\":{\"red\":255,\"green\":255,\"b
+                  lue\":255,\"alpha\":0.1}},\"frame\":{\"sidebarWidth\":288,\"collapsed\":false,\"narrowViewportMaxWidth\":700,\"zoomFactor\":1,\"shapes\":[{\"top\":50,\"left\":16,\"width\":20,\"height\":20,\"radius\":4},{\"top\":53,\"left\":44,\"width\":28,\"height\":14,\"radius\":4},{\"top\":84,\"left\":16,\"width\":20,\"height\":20,\"radius\":4},{\"top\":87,\"left\":44,\"width\":41,\"height\":14,\"radius\":4},{\"top\":118,\"left\":16,\"width\":20,\"height\":20,\"radius\":4},{\"top\":121,\"lef
+                  t\":44,\"width\":49,\"height\":14,\"radius\":4},{\"top\":152,\"left\":16,\"width\":20,\"height\":20,\"radius\":4},{\"top\":155,\"left\":44,\"width\":50.5,\"height\":14,\"radius\":4},{\"top\":186,\"left\":16,\"width\":20,\"height\":20,\"radius\":4},{\"top\":189,\"left\":44,\"width\":64.5,\"height\":14,\"radius\":4},{\"top\":220,\"left\":16,\"width\":20,\"height\":20,\"radius\":4},{\"top\":223,\"left\":44,\"width\":64.5,\"height\":14,\"radius\":4},{\"top\":275.5,\"left\":61,\"wid
+                  th\":14,\"height\":14,\"radius\":4},{\"top\":276,\"left\":18,\"width\":38,\"height\":12,\"radius\":4},{\"top\":306,\"left\":16,\"width\":20,\"height\":20,\"radius\":4},{\"top\":309,\"left\":44,\"width\":68.5,\"height\":14,\"radius\":4},{\"top\":343,\"left\":44,\"width\":145,\"height\":14,\"radius\":4},{\"top\":399.5,\"left\":65,\"width\":14,\"height\":14,\"radius\":4},{\"top\":400,\"left\":18,\"width\":42,\"height\":12,\"radius\":4},{\"top\":433,\"left\":18,\"width\":139.5,\"he
+                  ight\":14,\"radius\":4},{\"top\":467,\"left\":18,\"width\":148.5,\"height\":14,\"radius\":4},{\"top\":501,\"left\":18,\"width\":118,\"height\":14,\"radius\":4},{\"top\":535,\"left\":18,\"width\":257.5,\"height\":14,\"radius\":4},{\"top\":569,\"left\":18,\"width\":156,\"height\":14,\"radius\":4},{\"top\":603,\"left\":18,\"width\":257.5,\"height\":14,\"radius\":4},{\"top\":637,\"left\":18,\"width\":47.5,\"height\":14,\"radius\":4}]}}" /prefetch:1
+
+ProcessId       : 17268
+ParentProcessId : 7836
+Name            : claude.exe
+CreationDate    : 11/3/2026 7:02:48 PM
+CommandLine     : "C:\Program Files\WindowsApps\Claude_4.4212.0.0_x64__pzs8sxrjxfjjc\app\Claude.exe" --type=renderer --user-data-dir="C:\Users\Omen\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc" --standard-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app --secure-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app,sentry-ipc --bypasscsp-schemes=claude-media,claude-simulator,sentry-ipc --cors-schemes=claude-simulator,sentry-ipc 
+                  --fetch-schemes=cowork-artifact,cowork-file,claude-simulator,app,sentry-ipc --service-worker-schemes=app --streaming-schemes=cowork-file,claude-media,claude-simulator --app-user-model-id=Claude_pzs8sxrjxfjjc!Claude --app-path="C:\Program Files\WindowsApps\Claude_4.4212.0.0_x64__pzs8sxrjxfjjc\app\resources\app.asar" --enable-sandbox --blink-settings=dnsPrefetchingEnabled=false --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.5 --num-raster-threads=4 
+                  --enable-main-frame-before-activation --renderer-client-id=7 --launch-time-ticks=33654532756 --field-trial-handle=2236,i,6008163782882301185,1339345067132457106,262144 --enable-features=AllowWindowCaptureExclusionInRemoteSessions,DocumentPolicyIncludeJSCallStacksInCrashReports,HttpCacheZstdCompression,HttpCacheZstdDecompression,IsolatesPriorityUseProcessPriority,PdfUseShowSaveFilePicker 
+                  --disable-features=ConnectionAllowlists,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=2260,i,18113046666939560513,1147985613356266861,4 --trace-process-track-uuid=3190708992871164437 --mojo-platform-channel-handle=3760 --desktop-features="{\"launch\":{\"status\":\"supported\"},\"coworkBrowser\":{\"status
+                  \":\"unsupported\",\"reason\":\"cowork_browser_disabled\",\"unsupportedCode\":\"unknown\"},\"artifactsPane\":{\"status\":\"unavailable\"},\"nativeQuickEntry\":{\"status\":\"unavailable\"},\"quickEntryDictation\":{\"status\":\"unavailable\"},\"quickEntryGlobalShortcut\":{\"status\":\"supported\"},\"trayIcon\":{\"status\":\"supported\"},\"customQuickEntryDictationShortcut\":{\"status\":\"supported\"},\"ultrareviewErrorCategories\":{\"status\":\"supported\"},\"spawnTaskPendingPop\
+                  ":{\"status\":\"supported\"},\"spawnTaskInFlightIds\":{\"status\":\"supported\"},\"folderWorktrees\":{\"status\":\"supported\"},\"folderWorktreesRemote\":{\"status\":\"supported\"},\"folderWorktreesListedDiscard\":{\"status\":\"supported\"},\"sableOtter\":{\"status\":\"unavailable\"},\"telescopeBridge\":{\"status\":\"unavailable\"},\"mcpFinishInApp\":{\"status\":\"unavailable\"},\"copperLarkA\":{\"status\":\"supported\"},\"copperLarkB\":{\"status\":\"supported\"},\"copperLarkC\
+                  ":{\"status\":\"unavailable\"},\"copperLarkD\":{\"status\":\"unavailable\"},\"copperLarkH\":{\"status\":\"supported\"},\"quietPenguin\":{\"status\":\"unavailable\"},\"rubberDuck\":{\"status\":\"unavailable\"},\"chillingSlothFeat\":{\"status\":\"supported\"},\"chillingSlothSshShell\":{\"status\":\"supported\"},\"terminalShellReported\":{\"status\":\"supported\"},\"sshBrowserPane\":{\"status\":\"unavailable\"},\"chillingSlothSshWorktreeLocation\":{\"status\":\"supported\"},\"chil
+                  lingSlothSshPuttyKeyConversion\":{\"status\":\"unavailable\"},\"chillingSlothRemoteFilePreview\":{\"status\":\"supported\"},\"chillingSlothEnterprise\":{\"status\":\"supported\"},\"chillingSlothLocal\":{\"status\":\"supported\"},\"yukonSilver\":{\"status\":\"unsupported\",\"reason\":\"Missing HCS services: HNS, vmcompute, vfpext\",\"unsupportedCode\":\"hcs_not_available\"},\"yukonSilverGems\":{\"status\":\"unsupported\",\"reason\":\"Missing HCS services: HNS, vmcompute, 
+                  vfpext\",\"unsupportedCode\":\"hcs_not_available\"},\"yukonSilverGemsCache\":{\"status\":\"unsupported\",\"reason\":\"Missing HCS services: HNS, vmcompute, vfpext\",\"unsupportedCode\":\"hcs_not_available\"},\"wakeScheduler\":{\"status\":\"unavailable\"},\"keepAwake\":{\"status\":\"supported\"},\"projects\":{\"status\":\"supported\"},\"codeSessionKeepAwake\":{\"status\":\"supported\"},\"ccdPromptSuggestionsSetting\":{\"status\":\"unavailable\"},\"ccdLandingTools\":{\"status\":\
+                  "supported\"},\"ccdMcpVerbsMidTurn\":{\"status\":\"supported\"},\"ccdMcpTurnOnSshHost\":{\"status\":\"supported\"},\"ccdRestartRemoteClaudeCode\":{\"status\":\"supported\"},\"ccdSshStartsWithoutBlockedPlugins\":{\"status\":\"supported\"},\"openWithConsentAnyLanding\":{\"status\":\"supported\"},\"desktopTopBar\":{\"status\":\"supported\"},\"ccdPlugins\":{\"status\":\"supported\"},\"ccdPluginSourceRouting\":{\"status\":\"supported\"},\"computerUse\":{\"status\":\"supported\"},\"c
+                  omputerUseRollout\":{\"status\":\"unavailable\"},\"computerUseComplianceGate\":{\"status\":\"supported\"},\"computerUseAppScoped\":{\"status\":\"unsupported\",\"reason\":\"Background app-scoped mode is macOS-only\",\"unsupportedCode\":\"unsupported_platform\"},\"computerUsePerAppAccess\":{\"status\":\"supported\"},\"coworkWatchRecord\":{\"status\":\"unavailable\"},\"coworkCopperHeron\":{\"status\":\"unavailable\"},\"coworkWatchers\":{\"status\":\"unavailable\"},\"coworkKappa\":
+                  {\"status\":\"unavailable\"},\"coworkArtifacts\":{\"status\":\"unavailable\"},\"trustedFolderSettingsConsent\":{\"status\":\"unavailable\"},\"coworkAutoModeAlwaysAllowOverride\":{\"status\":\"unavailable\"},\"framebufferPreview\":{\"status\":\"unavailable\"},\"iosSimulator\":{\"status\":\"unsupported\",\"reason\":\"iOS Simulator panel requires macOS\",\"unsupportedCode\":\"unsupported_platform\"},\"androidEmulator\":{\"status\":\"unsupported\",\"reason\":\"Android emulator is 
+                  disabled by its rollout flag\",\"unsupportedCode\":\"unknown\"},\"androidEmulatorCreate\":{\"status\":\"unsupported\",\"reason\":\"Android emulator is disabled by its rollout flag\",\"unsupportedCode\":\"unknown\"},\"iosSimulatorH264\":{\"status\":\"unsupported\",\"reason\":\"iOS Simulator panel requires macOS\",\"unsupportedCode\":\"unsupported_platform\"},\"iosSimulatorAccessibilityReader\":{\"status\":\"unsupported\",\"reason\":\"iOS Simulator panel requires macOS\",\"unsupp
+                  ortedCode\":\"unsupported_platform\"},\"iosSimulatorDuo\":{\"status\":\"unavailable\"},\"simulatorScreenshotEditor\":{\"status\":\"unavailable\"},\"simulatorMiniView\":{\"status\":\"unavailable\"},\"grandPrix\":{\"status\":\"unavailable\"},\"chromeExtensionInstall\":{\"status\":\"supported\"},\"ccdGitEngine\":{\"status\":\"unavailable\"},\"sessionPrOwnership\":{\"status\":\"unavailable\"},\"sessionFolderFileAccess\":{\"status\":\"supported\"},\"conversationFolderGrants\":{\"sta
+                  tus\":\"supported\"},\"localSessionsWithoutGit\":{\"status\":\"supported\"},\"tearOffHalo\":{\"status\":\"unsupported\",\"reason\":\"Tear-off halo overlay requires macOS\",\"unsupportedCode\":\"unsupported_platform\"},\"coworkArtifactPopout\":{\"status\":\"supported\"},\"sidePanePopoutNativeViews\":{\"status\":\"supported\"},\"simulatorNativeViewPopout\":{\"status\":\"supported\"},\"simulatorPopoutShortcuts\":{\"status\":\"supported\"},\"simulatorNativeViewPerPane\":{\"status\"
+                  :\"supported\"},\"popoutZoom\":{\"status\":\"supported\"},\"popoutTitleBarOverlay\":{\"status\":\"supported\"},\"filePreviewNativeViewRouting\":{\"status\":\"supported\"},\"claudeDesignWindow\":{\"status\":\"supported\"},\"coworkRemoteSessionSpaces\":{\"status\":\"supported\"},\"spaceMemoryBridge\":{\"status\":\"unavailable\"},\"multiAccount\":{\"status\":\"unavailable\"},\"grandPrixRequest\":{\"status\":\"unavailable\"},\"bootPlaceholder\":{\"status\":\"supported\"},\"coworkBr
+                  anchSession\":{\"status\":\"supported\"},\"coworkScheduledTaskProjects\":{\"status\":\"supported\"},\"coworkLocalSessionProjects\":{\"status\":\"supported\"},\"coworkScheduledTaskRepoint\":{\"status\":\"supported\"},\"sshAttachmentTransport\":{\"status\":\"supported\"},\"coworkSeededSummon\":{\"status\":\"supported\"},\"seededKind\":{\"status\":\"supported\"},\"coworkTextNotTyped\":{\"status\":\"unavailable\"},\"sendNowEscalation\":{\"status\":\"supported\"},\"steerDetachField\
+                  ":{\"status\":\"supported\"},\"sessionMentions\":{\"status\":\"supported\"},\"inlinePastes\":{\"status\":\"supported\"},\"turnDiscardedEvent\":{\"status\":\"supported\"},\"turnBoxAtReplies\":{\"status\":\"supported\"},\"wslForkSession\":{\"status\":\"unavailable\"},\"wslTerminal\":{\"status\":\"unavailable\"},\"wslMcp\":{\"status\":\"unavailable\"},\"wslPreview\":{\"status\":\"unavailable\"},\"wslLocalFiles\":{\"status\":\"unavailable\"},\"wslRoutines\":{\"status\":\"unavailabl
+                  e\"},\"humbleSky\":{\"status\":\"unavailable\"},\"violinBow\":{\"status\":\"unavailable\"},\"violinBowHomeSettings\":{\"status\":\"unavailable\"},\"coworkThinkingInSend\":{\"status\":\"supported\"},\"bootstrapConfig\":{\"status\":\"supported\"},\"chatIn3p\":{\"status\":\"supported\"},\"chatTab\":{\"status\":\"unavailable\"},\"selfHostedSessions\":{\"status\":\"unavailable\"},\"selfHostedCowork\":{\"status\":\"unavailable\"},\"desktopHome\":{\"status\":\"unavailable\"},\"chatCod
+                  eExecution\":{\"status\":\"unavailable\"},\"mcpPersistentAlwaysAllow\":{\"status\":\"supported\"},\"mcpScheduledTaskAlwaysAllow\":{\"status\":\"supported\"},\"mcpScheduledTaskApprovalLifetime\":{\"status\":\"unavailable\"},\"epitaxyMcpApps\":{\"status\":\"supported\"},\"sideSessionProposalPicks\":{\"status\":\"supported\"},\"sideSessionProposalWorktreePick\":{\"status\":\"supported\"},\"sideSessionOfferCloudStart\":{\"status\":\"supported\"},\"sideSessions\":{\"status\":\"suppo
+                  rted\"},\"btwChildSessions\":{\"status\":\"unavailable\"},\"nestedArchiveKeepsFamily\":{\"status\":\"unavailable\"},\"epitaxyMcpAppPane\":{\"status\":\"unavailable\"},\"ccdConnectorTools\":{\"status\":\"unavailable\"},\"ccdTeleportSnapshot\":{\"status\":\"unavailable\"},\"officeHandoffDeviceSigning\":{\"status\":\"unavailable\"}}" --desktop-managed-config="{\"forceLoginOrgUUIDs\":null,\"loginSsoOrgDomain\":null,\"disableEssentialTelemetry\":false,\"disableNonessentialTelemetry\
+                  ":false,\"disableMobileSimulatorTools\":false,\"banner\":null,\"deploymentDisplayName\":null,\"deploymentDisplaySubtitle\":null,\"dictationAvailable\":false,\"userPluginMarketplacesEnabled\":true,\"userPluginUploadsEnabled\":true,\"configDeprecations\":[],\"configDeprecationNoticesSuppressed\":false,\"configOrgDelivered\":false,\"userContentFrameAllowed\":true,\"deploymentMode\":\"1p\",\"appVersion\":\"4.4212.0\",\"cookielessOrigin\":false,\"deviceClass\":\"16\",\"preferredSyst
+                  emLanguages\":[\"en-US\",\"en-MY\",\"ar-EG\"],\"homePath\":\"C:\\Users\\Omen\",\"extensionsEnabled\":true,\"localExtensionInstallAllowed\":true,\"unpackedExtensionInstallAllowed\":true}" /prefetch:1
+
+ProcessId       : 22852
+ParentProcessId : 7836
+Name            : claude.exe
+CreationDate    : 11/3/2026 7:02:52 PM
+CommandLine     : "C:\Program Files\WindowsApps\Claude_4.4212.0.0_x64__pzs8sxrjxfjjc\app\Claude.exe" --type=utility --utility-sub-type=video_capture.mojom.VideoCaptureService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Omen\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc" --standard-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app 
+                  --secure-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app,sentry-ipc --bypasscsp-schemes=claude-media,claude-simulator,sentry-ipc --cors-schemes=claude-simulator,sentry-ipc --fetch-schemes=cowork-artifact,cowork-file,claude-simulator,app,sentry-ipc --service-worker-schemes=app --streaming-schemes=cowork-file,claude-media,claude-simulator --field-trial-handle=2236,i,6008163782882301185,1339345067132457106,262144 
+                  --enable-features=AllowWindowCaptureExclusionInRemoteSessions,DocumentPolicyIncludeJSCallStacksInCrashReports,HttpCacheZstdCompression,HttpCacheZstdDecompression,IsolatesPriorityUseProcessPriority,PdfUseShowSaveFilePicker --disable-features=ConnectionAllowlists,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version 
+                  --pseudonymization-salt-handle=2260,i,18113046666939560513,1147985613356266861,4 --trace-process-track-uuid=3190708994745248135 --mojo-platform-channel-handle=5476 /prefetch:14
+
+ProcessId       : 10608
+ParentProcessId : 7836
+Name            : claude.exe
+CreationDate    : 11/3/2026 7:02:52 PM
+CommandLine     : "C:\Program Files\WindowsApps\Claude_4.4212.0.0_x64__pzs8sxrjxfjjc\app\Claude.exe" --type=utility --utility-sub-type=audio.mojom.AudioService --lang=en-US --service-sandbox-type=audio --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Omen\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc" --standard-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app --secure-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app,sentry-ipc 
+                  --bypasscsp-schemes=claude-media,claude-simulator,sentry-ipc --cors-schemes=claude-simulator,sentry-ipc --fetch-schemes=cowork-artifact,cowork-file,claude-simulator,app,sentry-ipc --service-worker-schemes=app --streaming-schemes=cowork-file,claude-media,claude-simulator --field-trial-handle=2236,i,6008163782882301185,1339345067132457106,262144 
+                  --enable-features=AllowWindowCaptureExclusionInRemoteSessions,DocumentPolicyIncludeJSCallStacksInCrashReports,HttpCacheZstdCompression,HttpCacheZstdDecompression,IsolatesPriorityUseProcessPriority,PdfUseShowSaveFilePicker --disable-features=ConnectionAllowlists,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version 
+                  --pseudonymization-salt-handle=2260,i,18113046666939560513,1147985613356266861,4 --trace-process-track-uuid=3190708993808206286 --mojo-platform-channel-handle=5356 /prefetch:12
+
+ProcessId       : 19300
+ParentProcessId : 7836
+Name            : claude.exe
+CreationDate    : 11/3/2026 7:08:44 PM
+CommandLine     : "C:\Program Files\WindowsApps\Claude_4.4212.0.0_x64__pzs8sxrjxfjjc\app\Claude.exe" --type=renderer --user-data-dir="C:\Users\Omen\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc" --standard-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app --secure-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app,sentry-ipc --bypasscsp-schemes=claude-media,claude-simulator,sentry-ipc --cors-schemes=claude-simulator,sentry-ipc 
+                  --fetch-schemes=cowork-artifact,cowork-file,claude-simulator,app,sentry-ipc --service-worker-schemes=app --streaming-schemes=cowork-file,claude-media,claude-simulator --app-user-model-id=Claude_pzs8sxrjxfjjc!Claude --app-path="C:\Program Files\WindowsApps\Claude_4.4212.0.0_x64__pzs8sxrjxfjjc\app\resources\app.asar" --enable-sandbox --blink-settings=dnsPrefetchingEnabled=false --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.5 --num-raster-threads=4 
+                  --enable-main-frame-before-activation --renderer-client-id=13 --launch-time-ticks=34010709515 --field-trial-handle=2236,i,6008163782882301185,1339345067132457106,262144 --enable-features=AllowWindowCaptureExclusionInRemoteSessions,DocumentPolicyIncludeJSCallStacksInCrashReports,HttpCacheZstdCompression,HttpCacheZstdDecompression,IsolatesPriorityUseProcessPriority,PdfUseShowSaveFilePicker 
+                  --disable-features=ConnectionAllowlists,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=2260,i,18113046666939560513,1147985613356266861,4 --trace-process-track-uuid=3190708998493415531 --mojo-platform-channel-handle=5700 /prefetch:1
+
+ProcessId       : 32436
+ParentProcessId : 7836
+Name            : claude.exe
+CreationDate    : 11/3/2026 8:24:21 PM
+CommandLine     : "C:\Program Files\WindowsApps\Claude_4.4212.0.0_x64__pzs8sxrjxfjjc\app\Claude.exe" --type=renderer --user-data-dir="C:\Users\Omen\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc" --standard-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app --secure-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app,sentry-ipc --bypasscsp-schemes=claude-media,claude-simulator,sentry-ipc --cors-schemes=claude-simulator,sentry-ipc 
+                  --fetch-schemes=cowork-artifact,cowork-file,claude-simulator,app,sentry-ipc --service-worker-schemes=app --streaming-schemes=cowork-file,claude-media,claude-simulator --app-user-model-id=Claude_pzs8sxrjxfjjc!Claude --app-path="C:\Program Files\WindowsApps\Claude_4.4212.0.0_x64__pzs8sxrjxfjjc\app\resources\app.asar" --enable-sandbox --blink-settings=dnsPrefetchingEnabled=false --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.5 --num-raster-threads=4 
+                  --enable-main-frame-before-activation --renderer-client-id=14 --launch-time-ticks=38548247231 --field-trial-handle=2236,i,6008163782882301185,1339345067132457106,262144 --enable-features=AllowWindowCaptureExclusionInRemoteSessions,DocumentPolicyIncludeJSCallStacksInCrashReports,HttpCacheZstdCompression,HttpCacheZstdDecompression,IsolatesPriorityUseProcessPriority,PdfUseShowSaveFilePicker 
+                  --disable-features=ConnectionAllowlists,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=2260,i,18113046666939560513,1147985613356266861,4 --trace-process-track-uuid=3190708999430457380 --mojo-platform-channel-handle=7048 /prefetch:1
+
+ProcessId       : 28924
+ParentProcessId : 7836
+Name            : claude.exe
+CreationDate    : 11/3/2026 8:24:28 PM
+CommandLine     : "C:\Program Files\WindowsApps\Claude_4.4212.0.0_x64__pzs8sxrjxfjjc\app\Claude.exe" --type=renderer --user-data-dir="C:\Users\Omen\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc" --standard-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app --secure-schemes=cowork-artifact,cowork-file,claude-media,claude-simulator,app,sentry-ipc --bypasscsp-schemes=claude-media,claude-simulator,sentry-ipc --cors-schemes=claude-simulator,sentry-ipc 
+                  --fetch-schemes=cowork-artifact,cowork-file,claude-simulator,app,sentry-ipc --service-worker-schemes=app --streaming-schemes=cowork-file,claude-media,claude-simulator --app-user-model-id=Claude_pzs8sxrjxfjjc!Claude --app-path="C:\Program Files\WindowsApps\Claude_4.4212.0.0_x64__pzs8sxrjxfjjc\app\resources\app.asar" --enable-sandbox --blink-settings=dnsPrefetchingEnabled=false --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.5 --num-raster-threads=4 
+                  --enable-main-frame-before-activation --renderer-client-id=18 --launch-time-ticks=38555008483 --field-trial-handle=2236,i,6008163782882301185,1339345067132457106,262144 --enable-features=AllowWindowCaptureExclusionInRemoteSessions,DocumentPolicyIncludeJSCallStacksInCrashReports,HttpCacheZstdCompression,HttpCacheZstdDecompression,IsolatesPriorityUseProcessPriority,PdfUseShowSaveFilePicker 
+                  --disable-features=ConnectionAllowlists,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=2260,i,18113046666939560513,1147985613356266861,4 --trace-process-track-uuid=3190709003178624776 --mojo-platform-channel-handle=5196 /prefetch:1
+
+ProcessId       : 36272
+ParentProcessId : 25016
+Name            : Code - Insiders.exe
+CreationDate    : 11/3/2026 9:04:32 PM
+CommandLine     : "C:\Users\Omen\AppData\Local\Programs\Microsoft VS Code Insiders\Code - Insiders.exe"
+
+ProcessId       : 5124
+ParentProcessId : 36272
+Name            : Code - Insiders.exe
+CreationDate    : 11/3/2026 9:04:35 PM
+CommandLine     : "C:\Users\Omen\AppData\Local\Programs\Microsoft VS Code Insiders\Code - Insiders.exe" --type=crashpad-handler "--user-data-dir=C:\Users\Omen\AppData\Roaming\Code - Insiders" /prefetch:4 --no-rate-limit --monitor-self-annotation=ptype=crashpad-handler "--database=C:\Users\Omen\AppData\Roaming\Code - Insiders\Crashpad" 
+                  --url=appcenter://code-insiders?aid=f047834f-d0e1-4aef-8870-5805ee483b2d&uid=ac40128e-783f-4f6b-9f1a-b5ae14dbe201&iid=ac40128e-783f-4f6b-9f1a-b5ae14dbe201&sid=ac40128e-783f-4f6b-9f1a-b5ae14dbe201 --annotation=_companyName=Microsoft --annotation=_productName=VSCode --annotation=_version=1.145.0-insider --annotation=plat=Win64 --annotation=prod=Electron --annotation=ver=43.8.3 --initial-client-data=0x54c,0x550,0x554,0x548,0x558,0x7ff6b301d908,0x7ff6b301d918,0x7ff6b301d928
+
+ProcessId       : 16876
+ParentProcessId : 36272
+Name            : Code - Insiders.exe
+CreationDate    : 11/3/2026 9:04:36 PM
+CommandLine     : "C:\Users\Omen\AppData\Local\Programs\Microsoft VS Code Insiders\Code - Insiders.exe" --type=gpu-process --user-data-dir="C:\Users\Omen\AppData\Roaming\Code - Insiders" --gpu-preferences=UAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAOAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAABgAAAAAAAAAGAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --field-trial-handle=1864,i,4299394052450869553,7334440736280044589,262144 
+                  --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,UpdateCompositorMemoryPolicyOnScreenChange --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version 
+                  --pseudonymization-salt-handle=1868,i,17190453886346662958,363427691506390779,4 --trace-process-track-uuid=3190708988185955192 --mojo-platform-channel-handle=1848 /prefetch:2
+
+ProcessId       : 22764
+ParentProcessId : 36272
+Name            : Code - Insiders.exe
+CreationDate    : 11/3/2026 9:04:36 PM
+CommandLine     : "C:\Users\Omen\AppData\Local\Programs\Microsoft VS Code Insiders\Code - Insiders.exe" --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --user-data-dir="C:\Users\Omen\AppData\Roaming\Code - Insiders" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource 
+                  --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1864,i,4299394052450869553,7334440736280044589,262144 
+                  --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,UpdateCompositorMemoryPolicyOnScreenChange --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version 
+                  --pseudonymization-salt-handle=1868,i,17190453886346662958,363427691506390779,4 --trace-process-track-uuid=3190708989122997041 --mojo-platform-channel-handle=2012 /prefetch:11
+
+ProcessId       : 12384
+ParentProcessId : 36272
+Name            : Code - Insiders.exe
+CreationDate    : 11/3/2026 9:04:36 PM
+CommandLine     : "C:\Users\Omen\AppData\Local\Programs\Microsoft VS Code Insiders\Code - Insiders.exe" --type=renderer --user-data-dir="C:\Users\Omen\AppData\Roaming\Code - Insiders" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource 
+                  --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-user-model-id=Microsoft.VisualStudioCodeInsiders --app-path="C:\Users\Omen\AppData\Local\Programs\Microsoft VS Code Insiders\3c0ec3a089\resources\app" --enable-sandbox --enable-blink-features=HighlightAPI --max-active-webgl-contexts=32 
+                  --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.5 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=4 --time-ticks-at-unix-epoch=-1793670113630358 --launch-time-ticks=40962993342 --field-trial-handle=1864,i,4299394052450869553,7334440736280044589,262144 
+                  --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,UpdateCompositorMemoryPolicyOnScreenChange --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version 
+                  --pseudonymization-salt-handle=1868,i,17190453886346662958,363427691506390779,4 --trace-process-track-uuid=3190708990060038890 --mojo-platform-channel-handle=3572 --vscode-window-config=vscode:40a9a5a7-c2e7-4c01-b4a2-d4edcd14ac4f /prefetch:1
+
+ProcessId       : 34048
+ParentProcessId : 36272
+Name            : Code - Insiders.exe
+CreationDate    : 11/3/2026 9:04:36 PM
+CommandLine     : "C:\Users\Omen\AppData\Local\Programs\Microsoft VS Code Insiders\Code - Insiders.exe" --type=renderer --user-data-dir="C:\Users\Omen\AppData\Roaming\Code - Insiders" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource 
+                  --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-user-model-id=Microsoft.VisualStudioCodeInsiders --app-path="C:\Users\Omen\AppData\Local\Programs\Microsoft VS Code Insiders\3c0ec3a089\resources\app" --enable-sandbox --enable-blink-features=HighlightAPI --max-active-webgl-contexts=32 
+                  --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.5 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --time-ticks-at-unix-epoch=-1793670113630358 --launch-time-ticks=40962993946 --field-trial-handle=1864,i,4299394052450869553,7334440736280044589,262144 
+                  --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,UpdateCompositorMemoryPolicyOnScreenChange --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version 
+                  --pseudonymization-salt-handle=1868,i,17190453886346662958,363427691506390779,4 --trace-process-track-uuid=3190708990997080739 --mojo-platform-channel-handle=3596 --vscode-window-config=vscode:b496dd01-6c6f-4784-b416-875a270fcf36 /prefetch:1
+
+ProcessId       : 34064
+ParentProcessId : 36272
+Name            : Code - Insiders.exe
+CreationDate    : 11/3/2026 9:04:38 PM
+CommandLine     : "C:\Users\Omen\AppData\Local\Programs\Microsoft VS Code Insiders\Code - Insiders.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Omen\AppData\Roaming\Code - Insiders" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource 
+                  --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1864,i,4299394052450869553,7334440736280044589,262144 
+                  --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,UpdateCompositorMemoryPolicyOnScreenChange --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version 
+                  --pseudonymization-salt-handle=1868,i,17190453886346662958,363427691506390779,4 --trace-process-track-uuid=3190708991934122588 --mojo-platform-channel-handle=3760 /prefetch:14
+
+ProcessId       : 32192
+ParentProcessId : 36272
+Name            : Code - Insiders.exe
+CreationDate    : 11/3/2026 9:04:38 PM
+CommandLine     : "C:\Users\Omen\AppData\Local\Programs\Microsoft VS Code Insiders\Code - Insiders.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Omen\AppData\Roaming\Code - Insiders" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource 
+                  --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1864,i,4299394052450869553,7334440736280044589,262144 
+                  --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,UpdateCompositorMemoryPolicyOnScreenChange --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version 
+                  --pseudonymization-salt-handle=1868,i,17190453886346662958,363427691506390779,4 --trace-process-track-uuid=3190708992871164437 --mojo-platform-channel-handle=4328 /prefetch:14
+
+ProcessId       : 31804
+ParentProcessId : 36272
+Name            : Code - Insiders.exe
+CreationDate    : 11/3/2026 9:04:39 PM
+CommandLine     : "C:\Users\Omen\AppData\Local\Programs\Microsoft VS Code Insiders\Code - Insiders.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Omen\AppData\Roaming\Code - Insiders" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource 
+                  --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1864,i,4299394052450869553,7334440736280044589,262144 
+                  --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,UpdateCompositorMemoryPolicyOnScreenChange --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version 
+                  --pseudonymization-salt-handle=1868,i,17190453886346662958,363427691506390779,4 --trace-process-track-uuid=3190708993808206286 --mojo-platform-channel-handle=4284 /prefetch:14
+
+ProcessId       : 31528
+ParentProcessId : 36272
+Name            : Code - Insiders.exe
+CreationDate    : 11/3/2026 9:04:39 PM
+CommandLine     : "C:\Users\Omen\AppData\Local\Programs\Microsoft VS Code Insiders\Code - Insiders.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Omen\AppData\Roaming\Code - Insiders" --standard-schemes=vscode-webview,vscode-file --enable-sandbox 
+                  --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1864,i,4299394052450869553,7334440736280044589,262144 
+                  --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,UpdateCompositorMemoryPolicyOnScreenChange --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version 
+                  --pseudonymization-salt-handle=1868,i,17190453886346662958,363427691506390779,4 --trace-process-track-uuid=3190708994745248135 --mojo-platform-channel-handle=4716 /prefetch:14
+
+ProcessId       : 14588
+ParentProcessId : 36272
+Name            : Code - Insiders.exe
+CreationDate    : 11/3/2026 9:04:40 PM
+CommandLine     : "C:\Users\Omen\AppData\Local\Programs\Microsoft VS Code Insiders\Code - Insiders.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Omen\AppData\Roaming\Code - Insiders" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource 
+                  --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1864,i,4299394052450869553,7334440736280044589,262144 
+                  --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,UpdateCompositorMemoryPolicyOnScreenChange --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version 
+                  --pseudonymization-salt-handle=1868,i,17190453886346662958,363427691506390779,4 --trace-process-track-uuid=3190708995682289984 --mojo-platform-channel-handle=4912 /prefetch:14
+
+ProcessId       : 24700
+ParentProcessId : 36272
+Name            : Code - Insiders.exe
+CreationDate    : 11/3/2026 9:04:40 PM
+CommandLine     : "C:\Users\Omen\AppData\Local\Programs\Microsoft VS Code Insiders\Code - Insiders.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Omen\AppData\Roaming\Code - Insiders" --standard-schemes=vscode-webview,vscode-file --enable-sandbox 
+                  --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1864,i,4299394052450869553,7334440736280044589,262144 
+                  --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,UpdateCompositorMemoryPolicyOnScreenChange --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version 
+                  --pseudonymization-salt-handle=1868,i,17190453886346662958,363427691506390779,4 --trace-process-track-uuid=3190708996619331833 --mojo-platform-channel-handle=3908 /prefetch:14
+
+ProcessId       : 2644
+ParentProcessId : 36272
+Name            : Code - Insiders.exe
+CreationDate    : 11/3/2026 9:04:42 PM
+CommandLine     : "C:\Users\Omen\AppData\Local\Programs\Microsoft VS Code Insiders\Code - Insiders.exe" --type=renderer --user-data-dir="C:\Users\Omen\AppData\Roaming\Code - Insiders" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource 
+                  --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-user-model-id=Microsoft.VisualStudioCodeInsiders --app-path="C:\Users\Omen\AppData\Local\Programs\Microsoft VS Code Insiders\3c0ec3a089\resources\app" --enable-sandbox --enable-blink-features=HighlightAPI --max-active-webgl-contexts=32 
+                  --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.5 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=12 --time-ticks-at-unix-epoch=-1793670113630358 --launch-time-ticks=40968583936 --field-trial-handle=1864,i,4299394052450869553,7334440736280044589,262144 
+                  --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,UpdateCompositorMemoryPolicyOnScreenChange --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version 
+                  --pseudonymization-salt-handle=1868,i,17190453886346662958,363427691506390779,4 --trace-process-track-uuid=3190708997556373682 --mojo-platform-channel-handle=4600 --vscode-window-config=vscode:40a9a5a7-c2e7-4c01-b4a2-d4edcd14ac4f /prefetch:1
+
+ProcessId       : 6224
+ParentProcessId : 36272
+Name            : Code - Insiders.exe
+CreationDate    : 11/3/2026 9:04:42 PM
+CommandLine     : "C:\Users\Omen\AppData\Local\Programs\Microsoft VS Code Insiders\Code - Insiders.exe" --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir="C:\Users\Omen\AppData\Roaming\Code - Insiders" --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource 
+                  --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1864,i,4299394052450869553,7334440736280044589,262144 
+                  --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,UpdateCompositorMemoryPolicyOnScreenChange --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version 
+                  --pseudonymization-salt-handle=1868,i,17190453886346662958,363427691506390779,4 --trace-process-track-uuid=3190708998493415531 --mojo-platform-channel-handle=4732 /prefetch:14
+
+ProcessId       : 34044
+ParentProcessId : 6224
+Name            : powershell.exe
+CreationDate    : 11/3/2026 9:04:47 PM
+CommandLine     : C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command "try { . \"c:\Users\Omen\AppData\Local\Programs\Microsoft VS Code Insiders\3c0ec3a089\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1\" } catch {}"
+
+ProcessId       : 10744
+ParentProcessId : 34064
+Name            : Code - Insiders.exe
+CreationDate    : 11/3/2026 9:04:49 PM
+CommandLine     : "C:\Users\Omen\AppData\Local\Programs\Microsoft VS Code Insiders\Code - Insiders.exe" "c:\Users\Omen\AppData\Local\Programs\Microsoft VS Code Insiders\3c0ec3a089\resources\app\out\bootstrap-fork" --type=fileWatcher
+
+ProcessId       : 25284
+ParentProcessId : 24700
+Name            : Code - Insiders.exe
+CreationDate    : 11/3/2026 9:04:51 PM
+CommandLine     : "C:\Users\Omen\AppData\Local\Programs\Microsoft VS Code Insiders\Code - Insiders.exe" c:\Users\Omen\.vscode-insiders\extensions\ms-python.vscode-pylance-2026.4.101\dist\server.bundle.js --cancellationReceive=file:2ad525793338d2d045591f4f298e3a7dc496ffc0c8 --node-ipc --clientProcessId=24700
+
+ProcessId       : 3560
+ParentProcessId : 24700
+Name            : nbcode64.exe
+CreationDate    : 11/3/2026 9:04:52 PM
+CommandLine     : c:\Users\Omen\.vscode-insiders\extensions\oracle.oracle-java-27.0.0\nbcode\bin\nbcode64.exe --jdkhome c:\Users\Omen\OneDrive\oracleJdk-26 --userdir "c:\Users\Omen\AppData\Roaming\Code - Insiders\User\workspaceStorage\2170e1318248f2535719193a6837e158\Oracle.oracle-java\userdir" -J-Dproject.limitScanRoot=C:\Users\Omen;c:\Users\Omen\Desktop\find_doctor_app --laf com.formdev.flatlaf.FlatDarkLaf --modules --list -J-XX:PerfMaxStringConstLength=10240 --locale en 
+                  --start-java-language-server=listen-hash:0 --start-java-debug-adapter-server=listen-hash:0 -J--add-exports=jdk.compiler/com.sun.tools.javac.resources=ALL-UNNAMED
+
+ProcessId       : 31492
+ParentProcessId : 24700
+Name            : Microsoft.CodeAnalysis.LanguageServer.exe
+CreationDate    : 11/3/2026 9:04:52 PM
+CommandLine     : c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csharp-2.160.4-win32-x64\.roslyn\Microsoft.CodeAnalysis.LanguageServer.exe --logLevel Information --sourceGeneratorExecutionPreference Balanced --devKitDependencyPath c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csharp-2.160.4-win32-x64\.roslynDevKit\Microsoft.VisualStudio.LanguageServices.DevKit.dll --sessionId 9e086b45-7929-4898-aca6-8547da487e6b1793711079228 --extension 
+                  c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csharp-2.160.4-win32-x64\.xamlTools\Microsoft.VisualStudio.DesignTools.CodeAnalysis.dll --extension c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csharp-2.160.4-win32-x64\.xamlTools\Microsoft.VisualStudio.DesignTools.CodeAnalysis.Diagnostics.dll --extension 
+                  c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csharp-2.160.4-win32-x64\.testDiscovery\Microsoft.VisualStudio.CSharpDevKit.SourceTestDiscovery.dll --extension c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csharp-2.160.4-win32-x64\.roslynCopilot\Microsoft.VisualStudio.Copilot.Roslyn.LanguageServer.dll --telemetryLevel all --extensionLogDirectory "c:\Users\Omen\AppData\Roaming\Code - Insiders\logs\20261103T210436\window1\exthost\ms-dotnettools.csharp" 
+                  --clientProcessId=24700 --pipe=\\.\pipe\lsp-f79c2ac34cda6ab85f54d1426dfe5517-sock
+
+ProcessId       : 18184
+ParentProcessId : 24700
+Name            : Microsoft.VisualStudio.Code.Server.exe
+CreationDate    : 11/3/2026 9:04:54 PM
+CommandLine     : c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csdevkit-3.40.215-win32-x64\components\vs-green-server\platforms\win32-x64\node_modules\@microsoft\visualstudio-server.win32-x64\Microsoft.VisualStudio.Code.Server --serviceHubConfigPath c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csdevkit-3.40.215-win32-x64\components\servicehub\servicehub.config.json --pipe \\.\pipe\69d183af-e3a7-4a49-b366-83e88f08778d --pipe-server 
+                  \\.\pipe\4338ecda-23b1-4536-9edc-2d18e9dfdc12 --log-directory "c:\Users\Omen\AppData\Roaming\Code - Insiders\logs\20261103T210436\window1\exthost\ms-dotnettools.csdevkit" --log-verbosity Information --vscodeSessionId 9e086b45-7929-4898-aca6-8547da487e6b1793711079228 --vscodeTelemetryLevel all --cache-directory c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csdevkit-3.40.215-win32-x64\cache --component 
+                  c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csdevkit-3.40.215-win32-x64\components\CPS\platforms\win32-x64\node_modules\@microsoft\msbuild-dependencies.win32-x64 c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csdevkit-3.40.215-win32-x64\components\CPS\platforms\win32-x64\node_modules\@microsoft\visualstudio-projectsystem-buildhost-rpc.win32-x64 
+                  c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csdevkit-3.40.215-win32-x64\components\CPS\platforms\win32-x64\node_modules\@microsoft\visualstudio-projectsystem-buildhost.win32-x64 c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csdevkit-3.40.215-win32-x64\components\CPS\platforms\win32-x64\node_modules\@microsoft\visualstudio-projectsystem-server.win32-x64 
+                  c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csdevkit-3.40.215-win32-x64\components\dnpsv\platforms\win32-x64\node_modules\@microsoft\vscode.projectsystem.managed.win32-x64 c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csdevkit-3.40.215-win32-x64\components\vs-green-server\platforms\win32-x64\node_modules\@microsoft\vscode.templateengine.win32-x64 
+                  c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csdevkit-3.40.215-win32-x64\components\vs-green-server\platforms\win32-x64\node_modules\@microsoft\visualstudio-reliability-monitor.win32-x64 c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csdevkit-3.40.215-win32-x64\components\vs-green-server\platforms\win32-x64\node_modules\@microsoft\visualstudio-server-shared.win32-x64 
+                  c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csdevkit-3.40.215-win32-x64\components\vs-green-server\platforms\win32-x64\node_modules\@microsoft\coverage-services.win32-x64 c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csdevkit-3.40.215-win32-x64\components\vs-green-server\platforms\win32-x64\node_modules\@microsoft\visualstudio-server.win32-x64 
+                  c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csdevkit-3.40.215-win32-x64\components\vs-green-server\platforms\win32-x64\node_modules\@microsoft\visualstudio-controller.win32-x64 c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csdevkit-3.40.215-win32-x64\components\vs-green-server\platforms\win32-x64\node_modules\@microsoft\visualstudio-testwindow-vscode-service.win32-x64 
+                  c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csdevkit-3.40.215-win32-x64\components\vs-green-server\platforms\win32-x64\node_modules\@microsoft\visualstudio-code-servicehost.win32-x64 c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csdevkit-3.40.215-win32-x64\components\VSDebugCore\platforms\win32-x64\node_modules\@microsoft\visualstudio-debugger-devkit.win32-x64
+
+ProcessId       : 24072
+ParentProcessId : 18184
+Name            : Microsoft.VisualStudio.Code.ServiceController.exe
+CreationDate    : 11/3/2026 9:04:55 PM
+CommandLine     : "c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csdevkit-3.40.215-win32-x64\components\vs-green-server\platforms\win32-x64\node_modules\@microsoft\visualstudio-controller.win32-x64/Microsoft.VisualStudio.Code.ServiceController" 08e87f5706e3872e598ffa3dc6a576f78419533527bf1ef7e069e2348537f93e /ControllerCooldownTimeout:30000 "/TelemetrySession:{\"TelemetryLevel\":\"all\",\"IsOptedIn\":false,\"HostName\":\"Default\",\"AppInsightsInstrumentationKey\":null,\"AsimovInstrum
+                  entationKey\":null,\"CollectorApiKey\":\"0c6ae279ed8443289764825290e4f9e2-1a736e7c-1324-4338-be46-fc2a58ae4d14-7255\",\"AppId\":1010,\"UserId\":\"b8643770-8ad9-4ba9-adce-95747a0d3d05\",\"Id\":\"9e086b45-7929-4898-aca6-8547da487e6b1793711079228\",\"ProcessStartTime\":134381846947726871,\"SkuName\":null,\"VSExeVersion\":null,\"BucketFiltersToEnableWatsonForFaults\":[],\"BucketFiltersToAddDumpsToFaults\":[]}"
+
+ProcessId       : 19824
+ParentProcessId : 24072
+Name            : Microsoft.VisualStudio.Code.ServiceHost.exe
+CreationDate    : 11/3/2026 9:04:59 PM
+CommandLine     : "c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csdevkit-3.40.215-win32-x64\components\vs-green-server\platforms\win32-x64\node_modules\@microsoft\visualstudio-code-servicehost.win32-x64\Microsoft.VisualStudio.Code.ServiceHost.exe" --runtimeconfig 
+                  c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csdevkit-3.40.215-win32-x64\components\vs-green-server\platforms\win32-x64\node_modules\@microsoft\visualstudio-code-servicehost.win32-x64\Microsoft.VisualStudio.Code.ServiceHost.MultipleHeap.runtimeconfig.json dotnet.projectSystem$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE net.pipe://2407247517E26F0230BC6EFDA4BE67A71066B "/TelemetrySession:{\"TelemetryLevel\":\"all\",\"IsOptedIn\":false,\"HostName\":\"Default\",\"AppInsightsIn
+                  strumentationKey\":null,\"AsimovInstrumentationKey\":null,\"CollectorApiKey\":\"0c6ae279ed8443289764825290e4f9e2-1a736e7c-1324-4338-be46-fc2a58ae4d14-7255\",\"AppId\":1010,\"UserId\":\"b8643770-8ad9-4ba9-adce-95747a0d3d05\",\"Id\":\"9e086b45-7929-4898-aca6-8547da487e6b1793711079228\",\"ProcessStartTime\":134381846947726871,\"SkuName\":null,\"VSExeVersion\":null,\"BucketFiltersToEnableWatsonForFaults\":[],\"BucketFiltersToAddDumpsToFaults\":[]}"
+
+ProcessId       : 33768
+ParentProcessId : 24072
+Name            : Microsoft.VisualStudio.Code.ServiceHost.exe
+CreationDate    : 11/3/2026 9:04:59 PM
+CommandLine     : "c:\Users\Omen\.vscode-insiders\extensions\ms-dotnettools.csdevkit-3.40.215-win32-x64\components\vs-green-server\platforms\win32-x64\node_modules\@microsoft\visualstudio-code-servicehost.win32-x64/Microsoft.VisualStudio.Code.ServiceHost.exe" dotnet$C94B8CFE-E3FD-4BAF-A941-2866DBB566FE net.pipe://2407247517E26F0230BC6EFDA4BE67A71066B "/TelemetrySession:{\"TelemetryLevel\":\"all\",\"IsOptedIn\":false,\"HostName\":\"Default\",\"AppInsightsInstrumentationKey\":null,\"AsimovInstrume
+                  ntationKey\":null,\"CollectorApiKey\":\"0c6ae279ed8443289764825290e4f9e2-1a736e7c-1324-4338-be46-fc2a58ae4d14-7255\",\"AppId\":1010,\"UserId\":\"b8643770-8ad9-4ba9-adce-95747a0d3d05\",\"Id\":\"9e086b45-7929-4898-aca6-8547da487e6b1793711079228\",\"ProcessStartTime\":134381846947726871,\"SkuName\":null,\"VSExeVersion\":null,\"BucketFiltersToEnableWatsonForFaults\":[],\"BucketFiltersToAddDumpsToFaults\":[]}"
+
+ProcessId       : 12240
+ParentProcessId : 39408
+Name            : java.exe
+CreationDate    : 11/4/2026 12:55:40 AM
+CommandLine     : "C:\Users\Omen\AppData\Local\Programs\Eclipse Adoptium\jdk-17.0.20.8-hotspot\bin\java.exe" --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED 
+                  --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.xml/javax.xml.namespace=ALL-UNNAMED --add-opens=java.base/java.time=ALL-UNNAMED -XX:MaxMetaspaceSize=4G -XX:ReservedCodeCacheSize=512m -XX:+HeapDumpOnOutOfMemoryError -Xmx8G -Dfile.encoding=windows-1252 
+                  -Duser.country=US -Duser.language=en -Duser.variant -cp C:\Users\Omen\.gradle\wrapper\dists\gradle-9.1.0-all\7wzd0jkjit61aq2p43wpjgij9\gradle-9.1.0\lib\gradle-daemon-main-9.1.0.jar -javaagent:C:\Users\Omen\.gradle\wrapper\dists\gradle-9.1.0-all\7wzd0jkjit61aq2p43wpjgij9\gradle-9.1.0\lib\agents\gradle-instrumentation-agent-9.1.0.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 9.1.0
+
+ProcessId       : 37624
+ParentProcessId : 4824
+Name            : cmd.exe
+CreationDate    : 11/4/2026 2:38:35 AM
+CommandLine     : C:\WINDOWS\system32\cmd.exe /c ""C:\Users\Omen\Desktop\find_doctor_app\Check-Procs.cmd" "
+
+ProcessId       : 33292
+ParentProcessId : 37624
+Name            : powershell.exe
+CreationDate    : 11/4/2026 2:38:36 AM
+CommandLine     : powershell  -NoProfile -WindowStyle Hidden -Command "Get-CimInstance Win32_Process | Where-Object { $_.Name -match 'dart|flutter|impellerc|gen_snapshot|msbuild|cmd|powershell|pwsh|node|python|claude|code|java|gradle|360|QH|ZhuDong|Defender|MsMpEng' } | Select-Object ProcessId,ParentProcessId,Name,CreationDate,CommandLine | Format-List | Out-String -Width 500 | Set-Content -Encoding UTF8 procs_now.txt"
+
+
+
+

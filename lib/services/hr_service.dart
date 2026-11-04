@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 
 import '../core/constants/malaysia_hospitals.dart';
@@ -188,7 +187,7 @@ class HrService extends ChangeNotifier {
   /// across hospitals. HR still only acts on its own hospital's cases.
   void attach(AppAccount me) {
     _attached = true;
-    final cases = FirebaseFirestore.instance.collection('hrCases');
+    final cases = CloudDb.instance.collection('hrCases');
     _mirror.listen([
       if (AccountService.isHr(me))
         cases

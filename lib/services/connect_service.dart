@@ -1,13 +1,11 @@
-import 'dart:convert';
 import 'dart:math';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 
 import '../core/domain/entities/user_role.dart';
 import 'account_service.dart';
 import 'cloud/fs_mirror.dart';
+import 'cloud/supabase_api.dart';
 
 // ===========================================================================
 // Models
@@ -509,7 +507,7 @@ DateTime _date(Object? value) =>
 // Service
 // ===========================================================================
 
-/// One doctor's weekly schedule (Firestore `schedules/{email}`).
+/// One doctor's weekly schedule (table `schedules`, id = email).
 class _ScheduleDoc {
   _ScheduleDoc(this.email, this.days);
   final String email;
@@ -527,7 +525,7 @@ class _ScheduleDoc {
       ]);
 }
 
-/// A booked time (Firestore `slots`): public, without patient details, so
+/// A booked time (table `slots`): public, without patient details, so
 /// everyone can see which times are taken.
 class _Slot {
   _Slot({
@@ -561,7 +559,7 @@ class _Slot {
 }
 
 /// Chat requests, conversations, groups, doctor schedules, visits, medical
-/// reports and notifications — in Firebase, live on every device.
+/// reports and notifications — in Supabase, live on every device.
 class ConnectService extends ChangeNotifier {
   ConnectService._() {
     AccountService.instance.addListener(_refreshAccounts);
@@ -580,6 +578,7 @@ class ConnectService extends ChangeNotifier {
 
   late final FsMirror<_ScheduleDoc> _scheduleMirror = FsMirror<_ScheduleDoc>(
     collection: 'schedules',
+    pollEvery: const Duration(seconds: 15),
     list: _scheduleDocs,
     idOf: (doc) => doc.email,
     toJson: (doc) => doc.toJson(),
@@ -645,7 +644,7 @@ class ConnectService extends ChangeNotifier {
   /// Starts listening for [me]: only what this person may see is loaded.
   void attach(AppAccount me) {
     _me = me;
-    final db = FirebaseFirestore.instance;
+    const db = CloudDb.instance;
     _scheduleMirror.listen([db.collection('schedules')]);
     final requests = db.collection('chatRequests');
     _requestMirror.listen([
@@ -714,7 +713,7 @@ class ConnectService extends ChangeNotifier {
   /// once don't lose each other's messages.
   static void _writeConversation(
     WriteBatch batch,
-    DocumentReference<JsonMap> ref,
+    DocumentReference ref,
     JsonMap now,
     JsonMap? before,
   ) {
@@ -1047,24 +1046,17 @@ class ConnectService extends ChangeNotifier {
       id: _slotId(doctor.email, start),
       doctorEmail: doctor.email,
       start: start,
-      owner: FirebaseAuth.instance.currentUser?.uid ?? '',
+      owner: CloudAuth.instance.currentUser?.uid ?? '',
       visitId: visit.id,
     );
-    final slotRef =
-        FirebaseFirestore.instance.collection('slots').doc(slot.id);
+    final slotRef = CloudDb.instance.collection('slots').doc(slot.id);
     try {
-      await FirebaseFirestore.instance.runTransaction((transaction) async {
-        final existing = await transaction.get(slotRef);
-        if (existing.exists) {
-          throw const ConnectException(
-              'That time was just taken. Please choose another time.');
-        }
-        transaction.set(slotRef, slot.toJson());
-      });
+      // Fails if the time already exists (the slot id is doctor + time).
+      await slotRef.create(slot.toJson());
     } on ConnectException {
       rethrow;
     } catch (error) {
-      if ('$error'.contains('just taken')) {
+      if (error is CloudDbException && error.code == 'already-exists') {
         throw const ConnectException(
             'That time was just taken. Please choose another time.');
       }
@@ -1566,8 +1558,7 @@ class ConnectService extends ChangeNotifier {
     final now = DateTime.now();
     final roomId =
         'staff_${hospitalKey(me.hospital).replaceAll(RegExp(r'[^a-z0-9]+'), '-')}';
-    final ref =
-        FirebaseFirestore.instance.collection('conversations').doc(roomId);
+    final ref = CloudDb.instance.collection('conversations').doc(roomId);
     try {
       if ((await ref.get()).exists) return;
     } catch (_) {

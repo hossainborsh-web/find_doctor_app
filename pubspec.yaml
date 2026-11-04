@@ -19,10 +19,6 @@ dependencies:
   flutter_bloc: ^9.1.1
   equatable: ^2.1.0
   provider: ^6.1.5+1
-  firebase_core: ^4.15.0
-  firebase_auth: ^6.7.0
-  cloud_firestore: ^6.10.0
-  flutter_secure_storage: ^11.2.0
   shared_preferences: ^2.5.5
   flutter_svg: ^2.3.0
   google_fonts: ^6.3.3
@@ -42,10 +38,3 @@ flutter:
   assets:
     - assets/images/
     - assets/images/explore/
-
-# Local copy of the Windows secure-storage plugin with <atlstr.h> replaced by a
-# small header (windows/atl_compat.h), so the app builds without Visual
-# Studio's optional "C++ ATL" component.
-dependency_overrides:
-  flutter_secure_storage_windows:
-    path: third_party/flutter_secure_storage_windows

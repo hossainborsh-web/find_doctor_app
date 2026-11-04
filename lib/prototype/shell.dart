@@ -10,7 +10,7 @@ import '../core/widgets/fd_widgets.dart';
 import 'connect_screens.dart';
 import 'content_widgets.dart';
 import 'explore_tab.dart';
-import 'manager_screens.dart';
+import 'demo_screens.dart';
 import 'prototype_session.dart';
 import '../services/account_service.dart';
 import '../services/connect_service.dart';
@@ -302,9 +302,7 @@ class _DesktopPrimaryNavigation extends StatelessWidget {
                                 color: Colors.white,
                               )),
                           Text(
-                            role == UserRole.manager
-                                ? managerLevel?.displayName ?? 'Manager'
-                                : role.displayName,
+                            session.accountTypeLabel,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: AppTextStyles.caption
@@ -1895,6 +1893,13 @@ class ProfileTab extends StatelessWidget {
                       icon: Icons.badge_outlined,
                       label: 'Hiring & staff',
                       onTap: () => openHrCenter(context)),
+                  const Divider(height: 1, indent: 52),
+                ],
+                if (AccountService.isGeneralManager(session.account)) ...[
+                  _AccountRow(
+                      icon: Icons.school_outlined,
+                      label: 'Demo examples for teachers',
+                      onTap: () => openDemoExamples(context)),
                   const Divider(height: 1, indent: 52),
                 ],
                 if (session.account?.isJobSeeker ?? false) ...[

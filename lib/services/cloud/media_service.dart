@@ -3,20 +3,21 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'dart:math';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:image/image.dart' as img;
 
-/// Photos on the free Firebase plan: shrunk to a JPEG and stored in the
-/// `media` collection. A post or certificate keeps a "media:<id>" reference.
+import 'cloud_db.dart';
+import 'supabase_api.dart';
+
+/// Photos: shrunk to a JPEG and stored in the `media` table (base64).
+/// A post or certificate keeps a "media:<id>" reference.
 class MediaService {
   MediaService._();
 
   static final MediaService instance = MediaService._();
   static const prefix = 'media:';
 
-  /// Firestore documents hold at most 1 MB; stay well under it.
+  /// The database rule allows up to 1 MB per photo; stay well under it.
   static const _maxBytes = 700 * 1024;
 
   final Map<String, Uint8List> _cache = {};
@@ -38,11 +39,11 @@ class MediaService {
     if (jpeg.length > _maxBytes) {
       throw const MediaException('This image is too large even after shrinking.');
     }
-    final user = FirebaseAuth.instance.currentUser;
+    final user = CloudAuth.instance.currentUser;
     if (user == null) throw const MediaException('Sign in first.');
     final id = '${DateTime.now().microsecondsSinceEpoch.toRadixString(36)}'
         '${Random().nextInt(1 << 20).toRadixString(36)}';
-    await FirebaseFirestore.instance.collection('media').doc(id).set({
+    await CloudDb.instance.collection('media').doc(id).create({
       'owner': user.uid,
       'mime': 'image/jpeg',
       'data': base64Encode(jpeg),
@@ -67,8 +68,7 @@ class MediaService {
 
   Future<Uint8List?> _fetch(String id) async {
     try {
-      final doc =
-          await FirebaseFirestore.instance.collection('media').doc(id).get();
+      final doc = await CloudDb.instance.collection('media').doc(id).get();
       final data = doc.data()?['data'];
       if (data is! String) return null;
       final bytes = base64Decode(data);

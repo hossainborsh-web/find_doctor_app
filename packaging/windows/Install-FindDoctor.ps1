@@ -5,7 +5,6 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $appName = 'Find Doctor'
-$version = '1.0.0'
 $installRoot = Join-Path $env:LOCALAPPDATA 'Programs\Find Doctor'
 $startMenuRoot = Join-Path $env:APPDATA 'Microsoft\Windows\Start Menu\Programs'
 $startMenuLink = Join-Path $startMenuRoot 'Find Doctor.lnk'
@@ -30,6 +29,11 @@ if (-not (Test-Path -LiteralPath $sourceExecutable -PathType Leaf)) {
     throw "The Windows app bundle was not found at '$sourceRoot'. Extract the complete installer package and run Install-FindDoctor.cmd again."
 }
 
+# Version comes from FindDoctor.exe itself (set from pubspec.yaml at build time).
+$version = (Get-Item -LiteralPath $sourceExecutable).VersionInfo.ProductVersion
+if ([string]::IsNullOrWhiteSpace($version)) { $version = '1.0.0' }
+$version = ($version -split '\+')[0]
+
 New-Item -ItemType Directory -Path $installRoot -Force | Out-Null
 Copy-Item -Path (Join-Path $sourceRoot '*') -Destination $installRoot -Recurse -Force
 
@@ -51,6 +55,9 @@ New-ItemProperty -Path $uninstallKey -Name 'DisplayName' -Value $appName -Proper
 New-ItemProperty -Path $uninstallKey -Name 'DisplayVersion' -Value $version -PropertyType String -Force | Out-Null
 New-ItemProperty -Path $uninstallKey -Name 'Publisher' -Value 'Find Doctor' -PropertyType String -Force | Out-Null
 New-ItemProperty -Path $uninstallKey -Name 'InstallLocation' -Value $installRoot -PropertyType String -Force | Out-Null
+New-ItemProperty -Path $uninstallKey -Name 'DisplayIcon' -Value "$(Join-Path $installRoot 'FindDoctor.exe'),0" -PropertyType String -Force | Out-Null
+New-ItemProperty -Path $uninstallKey -Name 'NoModify' -Value 1 -PropertyType DWord -Force | Out-Null
+New-ItemProperty -Path $uninstallKey -Name 'NoRepair' -Value 1 -PropertyType DWord -Force | Out-Null
 New-ItemProperty -Path $uninstallKey -Name 'UninstallString' -Value $uninstallCommand -PropertyType String -Force | Out-Null
 
 Write-Host 'Find Doctor is installed.'

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../services/cloud/media_service.dart';
 
-/// Shows a built-in asset, a photo stored in Firebase ("media:<id>") or a
+/// Shows a built-in asset, a photo stored in Supabase ("media:<id>") or a
 /// file on this device.
 class FdImage extends StatelessWidget {
   const FdImage(

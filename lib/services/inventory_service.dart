@@ -1,11 +1,10 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import 'account_service.dart';
 import 'cloud/fs_mirror.dart';
 
 /// Hospital stock: medication, equipment and consumables, with low-stock
-/// status. Kept in Firebase per hospital.
+/// status. Kept in Supabase per hospital.
 class InventoryService extends ChangeNotifier {
   // Singleton pattern implementation
   static final InventoryService _instance = InventoryService._internal();
@@ -28,7 +27,7 @@ class InventoryService extends ChangeNotifier {
 
   /// General Managers see every hospital's stock; hospital staff see theirs.
   void attach(AppAccount me) {
-    final items = FirebaseFirestore.instance.collection('inventory');
+    final items = CloudDb.instance.collection('inventory');
     final staff = AccountService.isHr(me) || me.practises;
     _attached = true;
     _mirror.listen([

@@ -6,7 +6,7 @@ import '../hr_service.dart';
 import '../inventory_service.dart';
 import '../post_service.dart';
 
-/// Starts each service's live Firebase sync for whoever is signed in, and
+/// Starts each service's live cloud sync for whoever is signed in, and
 /// restarts it when their role or hospital changes (e.g. after HR hires
 /// them), so they see exactly what their role allows.
 class CloudSession {

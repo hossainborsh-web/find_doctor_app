@@ -2,14 +2,13 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:crypto/crypto.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 
 import '../core/domain/entities/user_role.dart';
 import 'cloud/fs_mirror.dart';
 import 'cloud/media_service.dart';
+import 'cloud/supabase_api.dart';
 
 /// Where an account is in the sign-up / approval process.
 enum AccountStatus { active, pending, rejected }
@@ -143,7 +142,7 @@ class AppAccount {
         'hiredAt': hiredAt?.toIso8601String(),
       };
 
-  /// What is stored in Firebase: no passwords (Firebase Auth keeps those).
+  /// What is stored in the cloud: no passwords (Supabase Auth keeps those).
   Map<String, dynamic> toCloudJson() => toJson()
     ..remove('passwordHash')
     ..remove('salt')
@@ -204,9 +203,9 @@ class AccountException implements Exception {
   String toString() => message;
 }
 
-/// Sign-up, sign-in and every account's profile, in Firebase.
+/// Sign-up, sign-in and every account's profile, in Supabase.
 ///
-/// Firebase Auth checks passwords; profiles live in the `users` collection,
+/// Supabase Auth checks passwords; profiles live in the `profiles` table,
 /// which every signed-in device keeps a live copy of (for directories,
 /// chats and hiring). Listen to it to refresh screens.
 class AccountService extends ChangeNotifier {
@@ -224,13 +223,13 @@ class AccountService extends ChangeNotifier {
     toJson: (account) => account.toCloudJson(),
     fromJson: (id, json) => AppAccount.fromJson({...json, 'id': id}),
     onChange: _usersChanged,
+    pollEvery: const Duration(seconds: 10),
   );
   AppAccount? _current;
 
   AppAccount? get currentAccount => _current;
 
-  CollectionReference<Map<String, dynamic>> get _users =>
-      FirebaseFirestore.instance.collection('users');
+  CollectionReference get _users => CloudDb.instance.collection('users');
 
   static String normalizeEmail(String email) => email.trim().toLowerCase();
 
@@ -255,7 +254,7 @@ class AccountService extends ChangeNotifier {
   }
 
   Future<List<AppAccount>> _load() async {
-    if (FirebaseAuth.instance.currentUser == null) return _accounts;
+    if (CloudAuth.instance.currentUser == null) return _accounts;
     _startListening();
     await _mirror.ready;
     return _accounts;
@@ -285,7 +284,7 @@ class AccountService extends ChangeNotifier {
     return null;
   }
 
-  static AccountException _authError(FirebaseAuthException error) {
+  static AccountException _authError(CloudAuthException error) {
     switch (error.code) {
       case 'email-already-in-use':
         return const AccountException('EMAIL_EXISTS',
@@ -312,8 +311,15 @@ class AccountService extends ChangeNotifier {
         return const AccountException(
             'OFFLINE', 'No internet connection. Check it and try again.');
       case 'requires-recent-login':
+      case 'user-token-expired':
         return const AccountException(
             'SIGN_IN_AGAIN', 'Please sign out and sign in again first.');
+      case 'email-not-confirmed':
+        return const AccountException('NOT_CONFIRMED',
+            'Confirm your email first: open the link we sent to your inbox.');
+      case 'operation-not-allowed':
+        return const AccountException('SIGN_UP_OFF',
+            'Email sign-up is turned off for Find Doctor right now.');
       default:
         return AccountException(error.code,
             error.message ?? 'Something went wrong. Please try again.');
@@ -383,15 +389,40 @@ class AccountService extends ChangeNotifier {
       );
     }
 
-    final UserCredential credential;
+    AppAccount profile(String id) => AppAccount(
+          id: id,
+          fullName: fullName.trim(),
+          email: key,
+          role: role,
+          doctorKind: doctorKind,
+          // Nobody gets a hospital by signing up: HR assigns it on hiring.
+          hospital: '',
+          specialty: specialty.trim(),
+          birthday: birthday.trim(),
+          university: university.trim(),
+          graduationYear: graduationYear.trim(),
+          previousHospital: previousHospital.trim(),
+          status: AccountStatus.active,
+          createdAt: DateTime.now(),
+        );
+
+    // The database makes the profile from these details at sign-up (and
+    // applies the law: only User, Student or New Doctor).
+    final CloudUser user;
     try {
-      credential = await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(email: key, password: password);
-    } on FirebaseAuthException catch (error) {
+      user = await CloudAuth.instance.createUser(
+        email: key,
+        password: password,
+        data: {
+          'full_name': fullName.trim(),
+          'doc': profile('').toCloudJson()..remove('id'),
+        },
+      );
+    } on CloudAuthException catch (error) {
       throw _authError(error);
     }
     final account = AppAccount(
-      id: credential.user!.uid,
+      id: user.uid,
       fullName: fullName.trim(),
       email: key,
       role: role,
@@ -406,17 +437,16 @@ class AccountService extends ChangeNotifier {
       status: AccountStatus.active,
       createdAt: DateTime.now(),
     );
-    try {
-      await _users.doc(account.id).set(account.toCloudJson());
-      await credential.user!.updateDisplayName(account.fullName);
-    } catch (error) {
-      // Don't leave a sign-in without a profile behind.
-      await credential.user?.delete().catchError((_) {});
-      throw AccountException('SAVE_FAILED',
-          'Could not save your profile. Check your internet and try again. ($error)');
+    if (CloudAuth.instance.currentUser != null) {
+      try {
+        await _users.doc(account.id).set(account.toCloudJson());
+      } catch (error) {
+        // The sign-up already made the profile; this only refreshes it.
+        debugPrint('Find Doctor: profile save after sign-up: $error');
+      }
     }
     // The sign-up screen sends people to sign in next.
-    await FirebaseAuth.instance.signOut();
+    await CloudAuth.instance.signOut();
     return account;
   }
 
@@ -468,18 +498,27 @@ class AccountService extends ChangeNotifier {
     required String password,
   }) async {
     final key = normalizeEmail(email);
-    final UserCredential credential;
+    final CloudUser user;
     try {
-      credential = await FirebaseAuth.instance
-          .signInWithEmailAndPassword(email: key, password: password);
-    } on FirebaseAuthException catch (error) {
+      user = await CloudAuth.instance.signIn(email: key, password: password);
+    } on CloudAuthException catch (error) {
       throw _authError(error);
     }
-    final account = await _profileFor(credential.user!);
+    final AppAccount account;
+    try {
+      account = await _profileFor(user);
+    } on CloudDbException catch (error) {
+      await CloudAuth.instance.signOut();
+      throw AccountException(
+          error.code == 'unavailable' ? 'OFFLINE' : 'PROFILE',
+          error.code == 'unavailable'
+              ? 'No internet connection. Check it and try again.'
+              : 'Could not load your profile: ${error.message}');
+    }
     switch (account.status) {
       case AccountStatus.pending:
       case AccountStatus.rejected:
-        await FirebaseAuth.instance.signOut();
+        await CloudAuth.instance.signOut();
         throw const AccountException('NOT_ACTIVE',
             'This account is not active. Contact the hospital\'s HR.');
       case AccountStatus.active:
@@ -492,15 +531,15 @@ class AccountService extends ChangeNotifier {
   }
 
   /// The signed-in person's profile; creates a basic User profile for a
-  /// sign-in that has none (e.g. made in the Firebase console).
-  Future<AppAccount> _profileFor(User user) async {
+  /// sign-in that has none (e.g. made in the Supabase dashboard).
+  Future<AppAccount> _profileFor(CloudUser user) async {
     final doc = await _users.doc(user.uid).get();
     final data = doc.data();
     if (data != null) return AppAccount.fromJson({...data, 'id': user.uid});
     final account = AppAccount(
       id: user.uid,
-      fullName: user.displayName ?? (user.email ?? '').split('@').first,
-      email: normalizeEmail(user.email ?? ''),
+      fullName: user.displayName ?? user.email.split('@').first,
+      email: normalizeEmail(user.email),
       role: UserRole.patient,
       status: AccountStatus.active,
       createdAt: DateTime.now(),
@@ -510,22 +549,13 @@ class AccountService extends ChangeNotifier {
   }
 
   Future<AppAccount?> restoreSession() async {
-    User? user = FirebaseAuth.instance.currentUser;
-    if (user == null) {
-      try {
-        user = await FirebaseAuth.instance
-            .authStateChanges()
-            .first
-            .timeout(const Duration(seconds: 4));
-      } catch (_) {
-        user = null;
-      }
-    }
+    // CloudAuth.instance.init() (at start-up) restored the saved sign-in.
+    final user = CloudAuth.instance.currentUser;
     if (user == null) return null;
     try {
       final account = await _profileFor(user);
       if (account.status != AccountStatus.active) {
-        await FirebaseAuth.instance.signOut();
+        await CloudAuth.instance.signOut();
         return null;
       }
       _current = account;
@@ -541,7 +571,7 @@ class AccountService extends ChangeNotifier {
     _current = null;
     _mirror.stop();
     _accounts.clear();
-    await FirebaseAuth.instance.signOut();
+    await CloudAuth.instance.signOut();
     notifyListeners();
   }
 
@@ -549,7 +579,7 @@ class AccountService extends ChangeNotifier {
     required String currentPassword,
     required String newPassword,
   }) async {
-    final user = FirebaseAuth.instance.currentUser;
+    final user = CloudAuth.instance.currentUser;
     final account = _current;
     if (user == null || account == null) {
       throw const AccountException('NOT_SIGNED_IN', 'Please sign in again.');
@@ -561,10 +591,9 @@ class AccountService extends ChangeNotifier {
       );
     }
     try {
-      await user.reauthenticateWithCredential(EmailAuthProvider.credential(
-          email: account.email, password: currentPassword));
-      await user.updatePassword(newPassword);
-    } on FirebaseAuthException catch (error) {
+      await CloudAuth.instance.changePassword(
+          currentPassword: currentPassword, newPassword: newPassword);
+    } on CloudAuthException catch (error) {
       if (error.code == 'wrong-password' || error.code == 'invalid-credential') {
         throw const AccountException(
             'WRONG_PASSWORD', 'Your current password is incorrect.');
@@ -580,8 +609,8 @@ class AccountService extends ChangeNotifier {
   Future<String> passwordHelp(String email) async {
     final key = normalizeEmail(email);
     try {
-      await FirebaseAuth.instance.sendPasswordResetEmail(email: key);
-    } on FirebaseAuthException catch (error) {
+      await CloudAuth.instance.sendPasswordResetEmail(key);
+    } on CloudAuthException catch (error) {
       if (error.code != 'user-not-found') throw _authError(error);
     }
     return 'If an account exists for $key, we sent it an email with a link '
@@ -851,7 +880,7 @@ class AccountService extends ChangeNotifier {
 
   static const _imageTypes = {'png', 'jpg', 'jpeg', 'gif', 'bmp', 'webp'};
 
-  /// Shrinks the graduation certificate photo and saves it in Firebase.
+  /// Shrinks the graduation certificate photo and saves it in the cloud.
   Future<AppAccount> setCertificate(String email, String sourcePath) async {
     final account = await _stored(email, 'This account');
     if (!account.isJobSeeker) {
